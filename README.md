@@ -2,6 +2,10 @@
 
 Automatically switches Unraid's Dynamix theme between light and dark modes based on the server's local time.
 
+## Why I made this
+
+I tried other plugins that offered automatic theme switching, but the options I found required geolocation, which I was not comfortable enabling. I wanted a simple alternative that switches themes on a schedule without relying on location data, so I wrote this script. I have been using it for about a year without any issues.
+
 ## Requirements
 
 - An Unraid server with the **User Scripts** plugin installed.
@@ -22,6 +26,8 @@ Automatically switches Unraid's Dynamix theme between light and dark modes based
    A cron expression has five fields, in order: **minute, hour, day of month, month, day of week**. In this example, `0` means minute zero, `8,17` means both the 8th and 17th hours (08:00 and 17:00), and each `*` means every day, month, or weekday. The comma separates the two run hours.
 
    **Important:** these two cron run hours must match the two start hours configured in the script: `LIGHT_MODE_STARTS_AT` and `DARK_MODE_STARTS_AT`. If you change either start hour, update the cron expression too. For example, light at 09:00 and dark at 18:00 needs `0 9,18 * * *`. Use 24-hour hours from `0` to `23` in both places.
+
+   **If the server is off when a scheduled run is due, that run will be missed.** The script does not catch up automatically when the server starts again. Run it manually from User Scripts after the server is back online to apply the theme for the current time without waiting for the next scheduled run.
 
 The script reads and updates Unraid's saved theme in `/boot/config/plugins/dynamix/dynamix.cfg`. It only edits that setting when the selected theme differs from the mode active at the time it runs.
 
