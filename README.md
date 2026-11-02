@@ -39,7 +39,7 @@ Unraid includes the `white` and `black` themes by default. If you have other the
 2. Type this command at the prompt and press Enter:
 
    ```bash
-   ls /usr/local/emhttp/webGui/styles/themes/*.css
+   ls -1 /usr/local/emhttp/webGui/styles/themes/*.css
    ```
 
 3. The output lists the installed theme files. Use the filename without its directory or `.css` extension as the theme identifier. For example, `white.css` means the identifier is `white`.
