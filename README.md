@@ -39,10 +39,12 @@ Unraid includes the `white` and `black` themes by default. If you already have o
 2. Run this command to list the installed Dynamix theme names:
 
    ```bash
-   for f in /usr/local/emhttp/webGui/styles/themes/*.css; do [ -f "$f" ] && basename "$f" .css; done
+   printf '%s\n' /usr/local/emhttp/webGui/styles/themes/*.css | sed 's#.*/##; s/\.css$//'
    ```
 
-3. Use the exact name printed for a theme in the script settings below. The command removes the directory path and `.css` extension for you.
+   This prints each theme identifier without its directory or `.css` extension. If using the web terminal, type the command rather than pasting it if a paste shows markers such as `^[[200~`; those markers are terminal paste controls and will cause a shell error if inserted as text.
+
+3. Use the exact name printed for a theme in the script settings below.
 
 ## Configure the themes and start times
 
