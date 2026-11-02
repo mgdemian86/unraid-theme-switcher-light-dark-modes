@@ -33,19 +33,18 @@ The script reads and updates Unraid's saved theme in `/boot/config/plugins/dynam
 
 ## Find installed themes from the Unraid console
 
-Unraid includes the `white` and `black` themes by default. If you already have other themes installed and want to switch between them, you can use those too.
+Unraid includes the `white` and `black` themes by default. If you have other themes installed and want to switch between them, you can use those too.
 
 1. Open Unraid's built-in console/terminal from the Unraid web interface.
-2. Run this command to list the installed Dynamix theme names:
+2. Type this command at the prompt and press Enter:
 
    ```bash
-   printf '%s\n' /usr/local/emhttp/webGui/styles/themes/*.css | sed 's#.*/##; s/\.css$//'
+   ls /usr/local/emhttp/webGui/styles/themes/*.css
    ```
 
-   This prints each theme identifier without its directory or `.css` extension. If using the web terminal, type the command rather than pasting it if a paste shows markers such as `^[[200~`; those markers are terminal paste controls and will cause a shell error if inserted as text.
+3. The output lists the installed theme files. Use the filename without its directory or `.css` extension as the theme identifier. For example, `white.css` means the identifier is `white`.
 
-3. Use the exact name printed for a theme in the script settings below.
-
+If you paste a command into the web terminal and the prompt shows text such as `^[[200~`, the terminal is inserting paste-control characters as literal text. Clear the prompt with Ctrl+C, then type the command instead of pasting it.
 ## Configure the themes and start times
 
 Edit these four values near the top of the script. Replace the theme names inside the quotes with installed names from the console command above; keep the quotation marks. `white` and `black` are Unraid's default themes, and you can use any other installed themes instead.
