@@ -31,9 +31,22 @@ I tried other plugins that offered automatic theme switching, but the options I 
 
 The script reads and updates Unraid's saved theme in `/boot/config/plugins/dynamix/dynamix.cfg`. It only edits that setting when the selected theme differs from the mode active at the time it runs.
 
+## Find installed themes from the Unraid console
+
+Unraid includes the `white` and `black` themes by default. If you already have other themes installed and want to switch between them, you can use those too.
+
+1. Open Unraid's built-in console/terminal from the Unraid web interface.
+2. Run this command to list the installed Dynamix theme names:
+
+   ```bash
+   for f in /usr/local/emhttp/webGui/styles/themes/*.css; do [ -f "$f" ] && basename "$f" .css; done
+   ```
+
+3. Use the exact name printed for a theme in the script settings below. The command removes the directory path and `.css` extension for you.
+
 ## Configure the themes and start times
 
-Edit these four values near the top of the script:
+Edit these four values near the top of the script. Replace the theme names inside the quotes with installed names from the console command above; keep the quotation marks. `white` and `black` are Unraid's default themes, and you can use any other installed themes instead.
 
 ```bash
 LIGHT_THEME="white"
