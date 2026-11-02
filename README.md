@@ -44,6 +44,8 @@ Unraid includes the `white` and `black` themes by default. If you have other the
 
 3. The output lists the installed theme files. Use the filename without its directory or `.css` extension as the theme identifier. For example, `white.css` means the identifier is `white`.
 
+![Unraid console showing installed theme files](./theme-list-console.png)
+
 If you paste a command into the web terminal and the prompt shows text such as `^[[200~`, the terminal is inserting paste-control characters as literal text. Clear the prompt with Ctrl+C, then type the command instead of pasting it.
 ## Configure the themes and start times
 
