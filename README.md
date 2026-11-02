@@ -35,7 +35,10 @@ The script reads and updates Unraid's saved theme in `/boot/config/plugins/dynam
 
 Unraid includes the `white` and `black` themes by default. If you have other themes installed and want to switch between them, you can use those too.
 
-1. Open Unraid's built-in console/terminal from the Unraid web interface.
+1. In the Unraid web interface, click the **Console** button (>_) in the right-hand toolbar to open the built-in console.
+
+   ![Console button in the Unraid right-hand toolbar](./open-unraid-console.png)
+
 2. Type this command at the prompt and press Enter:
 
    ```bash
