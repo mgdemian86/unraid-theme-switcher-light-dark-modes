@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# Configure the Unraid theme identifiers and local start hours (0-23) here.
+# Enter installed theme names from the Unraid console below (omit the .css extension).
+# "white" and "black" are included with Unraid by default; replace either if desired.
 # Schedule this script to run at both configured start hours in User Scripts.
 LIGHT_THEME="white"
 DARK_THEME="black"
+# Set each mode's local start hour using a whole number from 0 to 23.
 LIGHT_MODE_STARTS_AT=8
 DARK_MODE_STARTS_AT=17
 
