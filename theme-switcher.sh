@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configure the Unraid theme identifiers and local start hours (0-23) here.
-# User Scripts runs this script hourly, and it applies whichever mode is active.
+# Schedule this script to run at both configured start hours in User Scripts.
 LIGHT_THEME="white"
 DARK_THEME="black"
 LIGHT_MODE_STARTS_AT=8
